@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papan Aspirasi OSIS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">📌</span><div><b>PAPAN ASPIRASI</b><small>OSIS • Suara Siswa, Perubahan Bersama</small></div></div>
+    <button class="primary" id="openForm">＋ Kirim Aspirasi</button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">RUANG ASPIRASI SISWA</p>
+      <h1>Sampaikan suaramu.</h1>
+      <p>Kritik dan saran yang membangun membantu sekolah menjadi lebih baik.</p>
+      <div class="stats"><span>📌 <b id="count">0</b> aspirasi belum ditanggapi</span><span class="live-dot">● Terhubung realtime</span></div>
+    </section>
+
+    <section class="board-wrap">
+      <div class="board-heading"><div><span class="eyebrow">MADING DIGITAL</span><h2>Papan Aspirasi</h2></div>
+        <div class="filters"><button class="filter active" data-filter="semua">Semua</button><button class="filter" data-filter="Kritik">Kritik</button><button class="filter" data-filter="Saran">Saran</button></div>
+      </div>
+      <div class="cork-board" id="board">
+        <div class="empty">Belum ada aspirasi. Jadilah yang pertama menempelkan pesan! 📌</div>
+      </div>
+    </section>
+    <footer>Disediakan oleh OSIS • Gunakan bahasa yang sopan dan membangun.</footer>
+  </main>
+
+  <dialog id="formDialog">
+    <form id="aspirationForm" class="dialog-card">
+      <button type="button" class="close" id="closeForm" aria-label="Tutup">×</button>
+      <p class="eyebrow">TAMBAHKAN CATATAN</p><h2>Kirim aspirasi</h2>
+      <label>Jenis aspirasi</label>
+      <div class="choice-row"><label class="choice"><input type="radio" name="kind" value="Kritik" checked> Kritik</label><label class="choice"><input type="radio" name="kind" value="Saran"> Saran</label></div>
+      <label for="studentName">Nama <span>(opsional)</span></label><input id="studentName" maxlength="60" placeholder="Nama atau kosongkan untuk anonim">
+      <label for="message">Pesan</label><textarea id="message" required maxlength="600" rows="5" placeholder="Tuliskan kritik atau saran dengan jelas dan sopan..."></textarea>
+      <button class="primary submit" type="submit">Tempel di Mading</button>
+      <p class="hint" id="formHint">Pesan akan tampil setelah berhasil dikirim.</p>
+    </form>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
